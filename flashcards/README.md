@@ -3,7 +3,7 @@
 Submitted by: Bhuvan Gabbita
 
 This web app tests your cricket knowleodge
-Time spent: 3 hours spent in total
+Time spent: 3.5 hours spent in total
 
 ## Required Features
 
