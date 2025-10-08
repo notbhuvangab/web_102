@@ -4,18 +4,19 @@ import { useState } from "react"
 
 const cn = (...classes) => classes.filter(Boolean).join(" ")
 
-export function FlashCard({ question, answer, category }) {
+export function FlashCard({ question, answer, category, showAnswer, feedback }) {
   const [isFlipped, setIsFlipped] = useState(false)
   const [showBatAnimation, setShowBatAnimation] = useState(false)
 
   const handleFlip = () => {
     if (!isFlipped) {
-      // Flipping to answer - show bat animation
       setShowBatAnimation(true)
       setTimeout(() => setShowBatAnimation(false), 600)
     }
     setIsFlipped(!isFlipped)
   }
+
+  const shouldShowAnswer = showAnswer !== undefined ? showAnswer : isFlipped
 
   const textClass = category === "rule" ? "text-rule" : "text-fun"
   const badgeClass = category === "rule" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"
@@ -109,16 +110,16 @@ export function FlashCard({ question, answer, category }) {
 
       <div
         className={cn(
-          "relative w-full h-[400px] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer",
-          isFlipped && "[transform:rotateY(180deg)]",
+          "relative w-full h-[400px] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]",
+          showAnswer === undefined ? "cursor-pointer" : "cursor-default",
+          shouldShowAnswer && "[transform:rotateY(180deg)]",
         )}
-        onClick={handleFlip}
+        onClick={showAnswer === undefined ? handleFlip : undefined}
         style={{
           transformStyle: "preserve-3d",
-          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transform: shouldShowAnswer ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-        {/* Front of card */}
         <div
           className={cn(
             "absolute inset-0 flex flex-col items-center justify-center p-8",
@@ -133,15 +134,17 @@ export function FlashCard({ question, answer, category }) {
             </span>
           </div>
           <h2 className={cn("text-2xl md:text-3xl font-bold text-center text-balance mb-6", textClass)}>{question}</h2>
-          <p className="text-muted-foreground text-sm">Click to reveal answer</p>
+          <p className="text-muted-foreground text-sm">
+            {showAnswer === undefined ? "Click to reveal answer" : "Enter your answer below"}
+          </p>
         </div>
 
-        {/* Back of card */}
         <div
           className={cn(
             "absolute inset-0 flex flex-col items-center justify-center p-8",
             bgClass,
             "border-2 shadow-lg hover:shadow-xl transition-shadow",
+            feedback && (feedback === 'correct' ? 'ring-4 ring-green-400' : 'ring-4 ring-red-400')
           )}
           style={{
             backfaceVisibility: "hidden",
@@ -156,7 +159,9 @@ export function FlashCard({ question, answer, category }) {
           <p className={cn("text-xl md:text-2xl font-semibold text-center text-balance leading-relaxed", textClass)}>
             {answer}
           </p>
-          <p className="text-foreground/70 text-sm mt-6">Click to flip back</p>
+          <p className="text-foreground/70 text-sm mt-6">
+            {showAnswer === undefined ? "Click to flip back" : "Check your answer above"}
+          </p>
         </div>
       </div>
 

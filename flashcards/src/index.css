@@ -4,14 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Cricket-themed color palette */
+
   --background: oklch(0.98 0.01 120);
   --foreground: oklch(0.15 0.02 180);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.02 180);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 180);
-  --primary: oklch(0.45 0.15 145); /* Cricket green */
+  --primary: oklch(0.45 0.15 145); 
   --rule: oklch(43.966% 0.14461 143.553);
   --fun: oklch(42.432% 0.09831 242.492);
   --primary-foreground: oklch(0.99 0 0);
@@ -19,7 +19,7 @@
   --secondary-foreground: oklch(0.15 0.02 180);
   --muted: oklch(0.95 0.01 120);
   --muted-foreground: oklch(0.5 0.02 180);
-  --accent: oklch(0.55 0.18 145); /* Vibrant green accent */
+  --accent: oklch(0.55 0.18 145); 
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
@@ -124,8 +124,8 @@
 .bg-fun {
   background: color-mix(in oklch, var(--accent) 42%, var(--background));
 }
-.text-rule { color: var(--primary); }
-.text-fun { color: var(--accent); }
+/* .text-rule { color: var(--primary); }
+.text-fun { color: var(--accent); } */
 
 @layer base {
   * {

@@ -20,7 +20,7 @@ const FoodTruckCard = ({ truck }) => {
     <div className="food-truck-card">
       {/* Card Header */}
       <div className="card-header">
-        <img src={truck.image}/>
+        <img src={truck.image} className=""/>
         <h3 className="card-title">{truck.name}</h3>
         <span className="card-region-badge">{truck.region}</span>
       </div>
