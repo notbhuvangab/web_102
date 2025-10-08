@@ -58,7 +58,7 @@ export const cricketFlashcards = [
   {
     id: 10,
     question: "What is the longest format of cricket?",
-    answer: "Test cricket - matches can last up to 5 days",
+    answer: "Test cricket ",
     category: "rule",
   },
   {
