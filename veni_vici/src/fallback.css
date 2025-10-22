@@ -1,0 +1,12 @@
+/* Minimal fallback styles to ensure content is visible if Tailwind fails */
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111827; /* dark gray */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.container { max-width: 1024px; margin: 0 auto; padding: 1rem; }
