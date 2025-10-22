@@ -41,7 +41,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://s2.ezgif.com/tmp/ezgif-2085884c6eacc8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='week5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ezGIF
