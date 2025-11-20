@@ -64,7 +64,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<video src='sphub.mov' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<video src='sphub.mp4' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 </video>
 
 
