@@ -56,11 +56,25 @@ export function CommentSection({ postId }: CommentSectionProps) {
       if (error) throw error
       
       if (data && data.length > 0) {
-        const commentsWithProfiles = data.map(comment => {
-          const profile = comment.profiles as { display_name: string } | null
+        const commentsWithProfiles = data.map((comment: any) => {
+          // Handle profile data - could be array or object depending on Supabase response
+          const profileData = comment.profiles
+          let displayName = comment.user_id.substring(0, 8)
+          
+          if (profileData) {
+            if (Array.isArray(profileData) && profileData.length > 0) {
+              displayName = profileData[0].display_name || displayName
+            } else if (typeof profileData === 'object' && 'display_name' in profileData) {
+              displayName = profileData.display_name || displayName
+            }
+          }
+          
           return {
-            ...comment,
-            display_name: profile?.display_name || comment.user_id.substring(0, 8)
+            id: comment.id,
+            content: comment.content,
+            created_at: comment.created_at,
+            user_id: comment.user_id,
+            display_name: displayName
           }
         })
         setComments(commentsWithProfiles)
