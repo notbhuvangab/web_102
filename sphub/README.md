@@ -64,7 +64,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<video src="sphub.mp4" width="320" height="240" controls></video>
+<img src="sphub.gif"></img>
 
 ## License
 

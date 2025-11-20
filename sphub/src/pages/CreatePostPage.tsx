@@ -117,13 +117,11 @@ export default function CreatePostPage() {
             />
           </div>
 
-          {/* Spotify URL Extractor */}
           <SpotifyUrlExtractor
             onDataExtracted={handleSpotifyDataExtracted}
             isLoading={isLoading}
           />
 
-          {/* Display Extracted Spotify Data */}
           {spotifyData && (
             <div className="border-4 border-black p-6 bg-white text-black">
               <h3 className="font-black uppercase mb-4 text-sm border-b-4 border-black pb-2">SPOTIFY TRACK</h3>
