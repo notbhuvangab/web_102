@@ -64,9 +64,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<video src='sphub.mp4' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-</video>
-
+<figure class="video_container">
+  <iframe src="sphub.mp4" frameborder="0" allowfullscreen="true"> 
+</iframe>
+</figure>
 
 ## License
 
