@@ -64,10 +64,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<figure class="video_container">
-  <iframe src="sphub.mp4" frameborder="0" allowfullscreen="true"> 
-</iframe>
-</figure>
+<video src="sphub.mp4" width="320" height="240" controls></video>
 
 ## License
 
