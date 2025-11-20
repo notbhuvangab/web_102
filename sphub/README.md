@@ -1,118 +1,85 @@
-# Music Forum - Vite + React + Supabase
+# Web Development Final Project - sphub
 
-A modern music sharing forum built with Vite, React, TypeScript, and Supabase.
+Submitted by: Bhuvan Gabbita
 
-## Features
+This web app: a forum to share favourite music
 
-### Required Features ✅
-- ✅ Create posts with title (required), optional content, and optional image URL
-- ✅ Home feed displaying posts with creation time, title, and upvotes count
-- ✅ Click post to view detail page
-- ✅ Sort posts by creation time or upvotes count
-- ✅ Search posts by title
-- ✅ Post detail page with content, image, and comments
-- ✅ Leave comments on posts
-- ✅ Upvote button (users can upvote any number of times)
-- ✅ Edit and delete own posts
+Time spent: 14 hours spent in total
 
-### Stretch Features ✅
-- ✅ **Pseudo-authentication**: Random user ID assigned on launch
-- ✅ **Repost/Reference**: Reference previous posts by ID to create threads
-- ✅ **Post Flags**: Set flags (Question/Opinion) when creating posts
-- ✅ **Filter by Flags**: Filter posts by Question or Opinion on home feed
-- ✅ **Video Support**: Share and view web videos (YouTube, Vimeo, etc.)
-- ✅ **Interface Customization**: Show/hide content and images on home feed
-- ✅ **Feed Display Options**: Control what appears on the home feed
+## Required Features
 
-## Getting Started
+The following **required** functionality is completed:
 
-### Prerequisites
-- Node.js 18+ and npm/pnpm
-- Supabase account and project
 
-### Installation
+- [x] **Web app includes a create form that allows the user to create posts**
+  - Form requires users to add a post title
+  - Forms should have the *option* for users to add: 
+    - additional textual content
+    - an image added as an external image URL
+- [x] **Web app includes a home feed displaying previously created posts**
+  - Web app must include home feed displaying previously created posts
+  - By default, each post on the posts feed should show only the post's:
+    - creation time
+    - title 
+    - upvotes count
+  - Clicking on a post should direct the user to a new page for the selected post
+- [x] **Users can view posts in different ways**
+  - Users can sort posts by either:
+    -  creation time
+    -  upvotes count
+  - Users can search for posts by title
+- [x] **Users can interact with each post in different ways**
+  - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
+    - content
+    - image
+    - comments
+  - Users can leave comments underneath a post on the post page
+  - Each post includes an upvote button on the post page. 
+    - Each click increases the post's upvotes count by one
+    - Users can upvote any post any number of times
 
-1. Install dependencies:
-```bash
-pnpm install
-# or
-npm install
-```
+- [x] **A post that a user previously created can be edited or deleted from its post pages**
+  - After a user creates a new post, they can go back and edit the post
+  - A previously created post can be deleted from its post page
 
-2. Set up environment variables:
-```bash
-cp .env.example .env
-```
+The following **optional** features are implemented:
 
-Edit `.env` and add your Supabase credentials:
-```
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
+- [x] Web app implements pseudo-authentication
+  - Users can only edit and delete posts or delete comments by entering the secret key, which is set by the user during post creation
+  - **or** upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them
+  - For both options, only the original user author of a post can update or delete it
+- [x] Users can repost a previous post by referencing its post ID. On the post page of the new post
+  - Users can repost a previous post by referencing its post ID
+  - On the post page of the new post, the referenced post is displayed and linked, creating a thread
+- [ ] Users can customize the interface
+  - e.g., selecting the color scheme or showing the content and image of each post on the home feed
+- [x] Users can add more characterics to their posts
+  - Users can share and view web videos
+  - Users can set flags such as "Question" or "Opinion" while creating a post
+  - Users can filter posts by flags on the home feed
+  - Users can upload images directly from their local machine as an image file
+- [ ] Web app displays a loading animation whenever data is being fetched
 
-3. Run database migrations:
-Execute the SQL files in the `scripts/` directory in order:
-- `001_create_tables.sql`
-- `002_disable_rls.sql` (if needed)
-- `005_update_schema_for_features.sql`
+## Video Walkthrough
 
-4. Start development server:
-```bash
-pnpm dev
-# or
-npm run dev
-```
+Here's a walkthrough of implemented user stories:
 
-5. Build for production:
-```bash
-pnpm build
-# or
-npm run build
-```
+<video src='sphub.mov' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+</video>
 
-## Deployment to Netlify
-
-1. Connect your repository to Netlify
-2. Set build settings:
-   - Build command: `npm run build` or `pnpm build`
-   - Publish directory: `dist`
-3. Add environment variables in Netlify dashboard:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-4. Deploy!
-
-The `netlify.toml` file is already configured for SPA routing.
-
-## Project Structure
-
-```
-sphub/
-├── src/
-│   ├── pages/          # Page components
-│   ├── app/            # Layout and global styles
-│   └── App.tsx         # Main app with routes
-├── components/         # Reusable components
-├── lib/                # Utilities and Supabase client
-├── scripts/            # Database migration scripts
-├── public/             # Static assets
-└── netlify.toml        # Netlify configuration
-```
-
-## Tech Stack
-
-- **Vite** - Build tool and dev server
-- **React 19** - UI library
-- **React Router** - Client-side routing
-- **TypeScript** - Type safety
-- **Supabase** - Backend and database
-- **Tailwind CSS** - Styling
-- **Radix UI** - Component primitives
-
-## Pseudo-Authentication
-
-Users are automatically assigned a random user ID on first visit. This ID is stored in localStorage and associated with all posts and comments. Users can optionally set a display name.
 
 ## License
 
-MIT
+    Copyright [2025] [Bhuvan Gabbita]
 
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
